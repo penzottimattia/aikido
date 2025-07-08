@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AIKIDO Late Breaking</title>
+  <title>AIKIDO</title>
   <link rel="icon" type="image/x-icon" href="static/images/logo-biorobotica-en-blu.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">AIKIDO: Combining inverse kinematics and rigid constrained dynamics for online collision avoidance</h1>
+            <h1 class="title is-1 publication-title">AIKIDO: Accordant Inverse Kinematics through Inferential Dynamics for collision-aware motion planning</h1>
             <div class="is-size-5 publication-authors">
               
               <!-- Paper authors -->
@@ -65,9 +65,9 @@
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">Scuola Superiore Sant'Anna<br></span>
                   </div>
-                  <div class="is-size-5 publication-authors">
+                  <!-- <div class="is-size-5 publication-authors">
                     <span class="author-block">Late Breaking results - ICRA 2025<br></span>
-                  </div>
+                  </div> -->
           
           <div class="column has-text-centered">
                     <div class="publication-links">
@@ -123,18 +123,25 @@
 </section>
 <!-- End teaser video -->
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-      <iframe  src="static/pdfs/poster.pdf" width="100%" height="550" width="100%" frameborder="0" scrolling="no">
-          </iframe>
-        
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Achieving high accuracy motion while ensuring real-time collision avoidance in cluttered and dynamic environments is a dual challenge often requiring a compromise. Here, we address this problem by proposing AIKIDO (Accordant Inverse Kinematics through Inferential Dynamics), a novel approach to local motion synthesis that combines closed-loop inverse kinematics, constrained rigid-body dynamics, and optimal control.  AIKIDO leverages a receding horizon control scheme to compute physically plausible, collision-free future states, which are then tracked by an acceleration optimal controller.  The main advantage of this approach is in the precise enforcement of non-compenetration constraints. We assessed the performance of our method both in simulation and real world experiments. AIKIDO outperforms the state of the art  planners in terms of all metrics considered, even under challenging conditions with tight clearances, cluttered and dynamic environments.
+          </p>
+        </div>
+        <div class="has-text-centered" style="margin-top: 2rem;">
+          <img src="static/images/aikido_overview.png" alt="AIKIDO method overview" style="max-width: 100%; height: auto;">
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+<!-- End paper abstract -->
 
 <!-- Video carousel -->
 <section class="hero is-small">
@@ -325,25 +332,34 @@
 </section>
 <!-- End video carousel -->
 
+<!-- Paper poster -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster @ ICRA 2025 Late Breaking Results</h2>
+      <iframe  src="static/pdfs/poster.pdf" width="100%" height="550" width="100%" frameborder="0" scrolling="no">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <p style="text-align: center;">
-        Preliminary abstract with real world results on a bimanual teleoperation platform is already available <a href="https://zenodo.org/records/14731073" target="https://proceedings.i-rim.it/content/details/2024/14731073">here</a>!
-      </p>
       <pre><code>@inproceedings{penzotti2024combining,
-                title=Combining inverse kinematics and rigid constrained dynamics for online collision avoidance,
-                author=Mattia Penzotti and Marco Controzzi,
-                booktitle=2024 I-RIM Conference,
-                DOI=10.5281/zenodo.14731073,
-                pages={106--110},
-                year = 2024,
-                organization=I-RIM
-                }</code></pre>
-                <p style="text-align: center;">
-        <b>Stay tuned for the full paper with code released. </b>
-      </p>
+        title=Combining inverse kinematics and rigid constrained dynamics for online collision avoidance,
+        author=Mattia Penzotti and Marco Controzzi,
+        booktitle=2024 I-RIM Conference,
+        DOI=10.5281/zenodo.14731073,
+        url=https://zenodo.org/records/14731073,
+        pages={106--110},
+        year = 2024,
+        organization=I-RIM
+      }</code>
+    </pre>
     </div>
 </section>
 <!--End BibTex citation -->
