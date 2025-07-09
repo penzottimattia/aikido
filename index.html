@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
 
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
@@ -24,17 +25,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AIKIDO Late Breaking</title>
+  <title>AIKIDO</title>
   <link rel="icon" type="image/x-icon" href="static/images/logo-biorobotica-en-blu.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,6 +43,7 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
+
 <body>
 
 
@@ -52,326 +52,370 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">AIKIDO: Combining inverse kinematics and rigid constrained dynamics for online collision avoidance</h1>
+            <h1 class="title is-1 publication-title">AIKIDO: Accordant Inverse Kinematics through Inferential Dynamics
+              for collision-aware motion planning</h1>
             <div class="is-size-5 publication-authors">
-              
+
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://www.santannapisa.it/it/mattia-penzotti" target="_blank">Mattia Penzotti</a>,</span>
-                <span class="author-block">
-                  <a href="https://www.santannapisa.it/it/marco-controzzi" target="_blank">Marco Controzzi</a></span>
-                  </div>
+              <span class="author-block">
+                <a href="https://www.santannapisa.it/it/marco-controzzi" target="_blank">Marco Controzzi</a></span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Scuola Superiore Sant'Anna<br></span>
-                  </div>
-                  <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Scuola Superiore Sant'Anna<br></span>
+            </div>
+            <!-- <div class="is-size-5 publication-authors">
                     <span class="author-block">Late Breaking results - ICRA 2025<br></span>
-                  </div>
-          
-          <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://zenodo.org/records/14731073" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Abstract</span>
-                      </a>
+                  </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block" id="arxiv-link">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
                     </span>
-                    </div>
-                    </div>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Coming soon (remove once arxiv is released) -->
+                <div id="toast-notification" style="display:none;position:fixed;top:20px;right:20px;z-index:9999;"
+                  class="notification is-info">
+                  <button class="delete"
+                    onclick="document.getElementById('toast-notification').style.display='none';"></button>
+                  Coming soon!
+                </div>
+                <script>
+                  document.getElementById('arxiv-link').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const url = this.href;
+                    if (navigator.clipboard) {
+                      navigator.clipboard.writeText(url);
+                    }
+                    const toast = document.getElementById('toast-notification');
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                      toast.style.display = 'none';
+                    }, 1500);
+                  });
+                </script>
+
+                <!-- Github link -->
+                <span class="link-block" id="github-link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark" id="github-link">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Coming soon (remove once repos is released) -->
+                <div id="toast-notification" style="display:none;position:fixed;top:20px;right:20px;z-index:9999;"
+                  class="notification is-info">
+                  <button class="delete"
+                    onclick="document.getElementById('toast-notification').style.display='none';"></button>
+                  Coming soon!
+                </div>
+                <script>
+                  document.getElementById('github-link').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const url = this.href;
+                    if (navigator.clipboard) {
+                      navigator.clipboard.writeText(url);
+                    }
+                    const toast = document.getElementById('toast-notification');
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                      toast.style.display = 'none';
+                    }, 1500);
+                  });
+                </script>
+
+                <!-- Abstract link -->
+                <!-- <span class="link-block">
+                  <a href="https://zenodo.org/records/14731073" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Abstract</span>
+                  </a>
+                </span> -->
+
+
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/robot_party.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Our method is fast, efficient and works with any robot URDF for seamless integration. Handles multiple serial chains and can be used with any robot. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/yumi_touch.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        It enforces exact tunable safety margins between collision shapes, so that motion tracking with closed-loop inverse kinematics is always accurate as possible. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-      <iframe  src="static/pdfs/poster.pdf" width="100%" height="550" width="100%" frameborder="0" scrolling="no">
-          </iframe>
-        
       </div>
     </div>
   </section>
-<!--End paper poster -->
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Results</h2>
-      <h2 class="title is-3 has-text-centered">Arm positioning</h2>
-      <div class="has-text-centered" style="margin-bottom: 2rem;">
-        <img src="static/images/legend.png" alt="Descriptive alt text" style="max-width: 70%; height: auto;">
-      </div>  
-      <div class="columns">
-        <!-- First carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#3 obstacles</h2>
-          <div id="results-carousel-pos-3" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_3_1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_3_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_3_3.mp4" type="video/mp4">
-              </video>
-            </div>
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/robot_party.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Our method is fast, efficient and works with any robot URDF for seamless integration. Handles multiple serial
+          chains and can be used with any robot.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/yumi_touch.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          It enforces exact tunable safety margins between collision shapes, so that motion tracking with closed-loop
+          inverse kinematics is always accurate as possible.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Achieving high accuracy motion while ensuring real-time collision avoidance in cluttered and dynamic
+              environments is a dual challenge often requiring a compromise. Here, we address this problem by proposing
+              AIKIDO (Accordant Inverse Kinematics through Inferential Dynamics), a novel approach to local motion
+              synthesis that combines closed-loop inverse kinematics, constrained rigid-body dynamics, and optimal
+              control. AIKIDO leverages a receding horizon control scheme to compute physically plausible,
+              collision-free future states, which are then tracked by an acceleration optimal controller. The main
+              advantage of this approach is in the precise enforcement of non-compenetration constraints. We assessed
+              the performance of our method both in simulation and real world experiments. AIKIDO outperforms the state
+              of the art planners in terms of all metrics considered, even under challenging conditions with tight
+              clearances, cluttered and dynamic environments.
+            </p>
+          </div>
+          <div class="has-text-centered" style="margin-top: 2rem;">
+            <img src="static/images/aikido_overview.png" alt="AIKIDO method overview"
+              style="max-width: 100%; height: auto;">
           </div>
         </div>
-        <!-- Second carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#5 obstacles</h2>
-          <div id="results-carousel-pos-5" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_5_1.mp4" type="video/mp4">
-              </video>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Results</h2>
+        <h2 class="title is-3 has-text-centered">Arm positioning</h2>
+        <div class="has-text-centered" style="margin-bottom: 2rem;">
+          <img src="static/images/legend.png" alt="Descriptive alt text" style="max-width: 70%; height: auto;">
+        </div>
+        <div class="columns">
+          <!-- First carousel column -->
+          <div class="column is-half">
+            <h2 class="title is-4 has-text-centered">#10 obstacles</h2>
+            <div id="results-carousel-pos-10" class="carousel results-carousel">
+              <div class="item item-video3">
+                <video poster="" id="video3" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_10_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_10_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_10_3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_10_4.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_5_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_5_3.mp4" type="video/mp4">
-              </video>
+          </div>
+          <!-- Second carousel column -->
+          <div class="column is-half">
+            <h2 class="title is-4 has-text-centered">#15 obstacles</h2>
+            <div id="results-carousel-pos-15" class="carousel results-carousel">
+              <div class="item item-video3">
+                <video poster="" id="video3" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_15_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_15_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/pos_15_3.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End video carousel -->
+  </section>
+  <!-- End video carousel -->
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <!-- First carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#10 obstacles</h2>
-          <div id="results-carousel-pos-10" class="carousel results-carousel">
-            <div class="item item-video3">
-              <video poster="" id="video3" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_10_1.mp4" type="video/mp4">
-              </video>
+  <!-- Video carousel -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Evading dynamic obstacles</h2>
+        <div class="has-text-centered" style="margin-bottom: 2rem;">
+          <img src="static/images/legend.png" alt="Descriptive alt text" style="max-width: 70%; height: auto;">
+        </div>
+        <div class="columns">
+          <!-- First carousel column -->
+          <div class="column is-half">
+            <h2 class="title is-4 has-text-centered">#5 obstacles</h2>
+            <div id="results-carousel-ev-5" class="carousel results-carousel">
+              <div class="item item-video1">
+                <video poster="" id="video1" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_5_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video2">
+                <video poster="" id="video2" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_5_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video2">
+                <video poster="" id="video2" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_5_3.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_10_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_10_3.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_10_4.mp4" type="video/mp4">
-              </video>
+          </div>
+          <!-- Second carousel column -->
+          <div class="column is-half">
+            <h2 class="title is-4 has-text-centered">#10 obstacles</h2>
+            <div id="results-carousel-ev-10" class="carousel results-carousel">
+              <div class="item item-video3">
+                <video poster="" id="video3" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_5.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video4">
+                <video poster="" id="video4" autoplay controls muted loop height="100%">
+                  <source src="static/videos/dyn_10_6.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Second carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#15 obstacles</h2>
-          <div id="results-carousel-ev-10" class="carousel results-carousel">
-            <div class="item item-video3">
-              <video poster="" id="video3" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_15_1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_15_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/pos_15_3.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+        <h2 class="title is-5 has-text-centered">(robot stops on failure)</h2>
       </div>
     </div>
-  </div>
-</section>
-<!-- End video carousel -->
+  </section>
+  <!-- End video carousel -->
 
-<!-- Video carousel -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Evading dynamic obstacles</h2>
-      <div class="has-text-centered" style="margin-bottom: 2rem;">
-        <img src="static/images/legend.png" alt="Descriptive alt text" style="max-width: 70%; height: auto;">
-      </div>  
-      <div class="columns">
-        <!-- First carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#5 obstacles</h2>
-          <div id="results-carousel-ev-5" class="carousel results-carousel">
-            <div class="item item-video1">
-              <video poster="" id="video1" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_5_1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video2">
-              <video poster="" id="video2" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_5_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video2">
-              <video poster="" id="video2" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_5_3.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-        <!-- Second carousel column -->
-        <div class="column is-half">
-          <h2 class="title is-4 has-text-centered">#10 obstacles</h2>
-          <div id="results-carousel-ev-10" class="carousel results-carousel">
-            <div class="item item-video3">
-              <video poster="" id="video3" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_3.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_4.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_5.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-video4">
-              <video poster="" id="video4" autoplay controls muted loop height="100%">
-                <source src="static/videos/dyn_10_6.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Poster @ ICRA 2025 Late Breaking Results</h2>
+        <iframe src="static/pdfs/poster.pdf" width="100%" height="550" width="100%" frameborder="0" scrolling="no">
+        </iframe>
+
       </div>
-      <h2 class="title is-5 has-text-centered">(robot stops on failure)</h2>
     </div>
-  </div>
-</section>
-<!-- End video carousel -->
+  </section> -->
+  <!--End paper poster -->
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <p style="text-align: center;">
-        Preliminary abstract with real world results on a bimanual teleoperation platform is already available <a href="https://zenodo.org/records/14731073" target="https://proceedings.i-rim.it/content/details/2024/14731073">here</a>!
-      </p>
       <pre><code>@inproceedings{penzotti2024combining,
-                title=Combining inverse kinematics and rigid constrained dynamics for online collision avoidance,
-                author=Mattia Penzotti and Marco Controzzi,
-                booktitle=2024 I-RIM Conference,
-                DOI=10.5281/zenodo.14731073,
-                pages={106--110},
-                year = 2024,
-                organization=I-RIM
-                }</code></pre>
-                <p style="text-align: center;">
-        <b>Stay tuned for the full paper with code released. </b>
-      </p>
+        title=Combining inverse kinematics and rigid constrained dynamics for online collision avoidance,
+        author=Mattia Penzotti and Marco Controzzi,
+        booktitle=2024 I-RIM Conference,
+        DOI=10.5281/zenodo.14731073,
+        url=https://zenodo.org/records/14731073,
+        pages={106--110},
+        year = 2024,
+        organization=I-RIM
+      }</code>
+    </pre>
     </div>
-</section>
-<!--End BibTex citation -->
+  </section> -->
+  <!--End BibTex citation -->
 
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
 
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- Statcounter tracking code -->
 
-    <!-- End of Statcounter Code -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-  </body>
-  </html>
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
